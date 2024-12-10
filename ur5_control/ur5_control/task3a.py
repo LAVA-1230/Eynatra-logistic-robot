@@ -249,7 +249,7 @@ class aruco_tf(Node):
         dist_mat = np.array([0.0,0.0,0.0,0.0,0.0])
 
         print("IDS:", ids)
-
+        team_id=4035
         if len(ids) > 0:
             for i in range(len(ids)):
                 try:
@@ -318,7 +318,7 @@ class aruco_tf(Node):
                     t.header.stamp = self.get_clock().now().to_msg()
                     t.header.frame_id = 'base_link'
 
-                    t.child_frame_id = f'obj_{ids[i][0]}'
+                    t.child_frame_id = f'{team_id}_base_{ids[i][0]}'
                     t.transform.translation.x = a
                     t.transform.translation.y = b
                     t.transform.translation.z = c
