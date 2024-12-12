@@ -288,6 +288,31 @@ class aruco_tf(Node):
                     red = np.array([red_x, red_y, red_z])
                     green = np.array([green_x, green_y, green_z])
 
+
+                    # Define a rotation of 90 degrees (π/2 radians) around the Z-axis
+                    # rotation_90_z = R.from_euler('z', 90, degrees=True)
+                    
+                    # # Apply the rotation to the red and green vectors
+                    # red_rotated = rotation_90_z.apply(red)
+                    # green_rotated = rotation_90_z.apply(green)
+                    
+                    # # Normalize the rotated vectors
+                    # red_rotated_norm = red_rotated / np.linalg.norm(red_rotated)
+                    # green_rotated_norm = green_rotated / np.linalg.norm(green_rotated)
+                    
+                    # # Recalculate the blue vector based on the rotated axes
+                    # blue_rotated = np.cross(red_rotated_norm, green_rotated_norm)
+                    
+                    # # Normalize the blue vector
+                    # blue_rotated_norm = blue_rotated / np.linalg.norm(blue_rotated)
+                    
+                    # # Form the new rotation matrix
+                    # rotation_matrix_rotated = np.column_stack((red_rotated_norm, green_rotated_norm, blue_rotated_norm))
+                    
+                    # # Convert the new rotation matrix to a quaternion
+                    # rot_rotated = R.from_matrix(rotation_matrix_rotated)
+                    # box_quat_rotated = rot_rotated.as_quat()
+
                     # Compute the cross product to find the blue vector
                     blue = np.cross(red, green)
 
